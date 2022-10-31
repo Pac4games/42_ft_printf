@@ -6,13 +6,13 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:53:59 by paugonca          #+#    #+#             */
-/*   Updated: 2022/10/31 14:38:25 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/10/31 14:40:29 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	numlen(unsigned long num, int base)
+static int	numlen(unsigned long num, int base)
 {
 	int	p;
 
