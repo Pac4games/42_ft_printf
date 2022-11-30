@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 13:15:01 by paugonca          #+#    #+#             */
-/*   Updated: 2022/10/31 14:08:14 by paugonca         ###   ########.fr       */
+/*   Created: 2022/11/23 16:31:34 by paugonca          #+#    #+#             */
+/*   Updated: 2022/11/30 15:39:03 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
-char	*ft_strdup(const char *str)
-{
-	char	*dst;
+# include <stdarg.h>
+# include "libft/libft.h"
 
-	dst = (char *)malloc((sizeof(char)) * (ft_strlen(str) + 1));
-	if (!dst)
-		return (0);
-	ft_memcpy(dst, str, ft_strlen(str) + 1);
-	return (dst);
-}
+int	ft_printf(const char *type, ...);
+
+#endif

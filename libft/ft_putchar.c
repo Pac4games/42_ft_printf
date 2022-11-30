@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:52:57 by paugonca          #+#    #+#             */
-/*   Updated: 2022/10/31 13:00:04 by paugonca         ###   ########.fr       */
+/*   Created: 2022/11/30 15:05:00 by paugonca          #+#    #+#             */
+/*   Updated: 2022/11/30 15:09:39 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_putchar(char c, int *res)
 {
-	if (c >= 65 && c <= 90)
-		c += 32;
-	return (c);
+	res += write(1, &c, 1);
 }
