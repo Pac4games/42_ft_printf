@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 15:05:00 by paugonca          #+#    #+#             */
-/*   Updated: 2022/11/30 15:44:55 by paugonca         ###   ########.fr       */
+/*   Created: 2022/11/30 15:54:08 by paugonca          #+#    #+#             */
+/*   Updated: 2022/11/30 15:55:12 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c, int *res)
+size_t	ft_strlen(const char *s)
 {
-	*res += write(1, &c, 1);
+	size_t	p;
+
+	p = 0;
+	while (s[p])
+		p++;
+	return (p);
 }

@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:28:46 by paugonca          #+#    #+#             */
-/*   Updated: 2022/11/30 15:39:39 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:25:40 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static void	exec_flag(va_list args, const char type, int *res)
 		ft_putchar(va_arg(args, int), res);
 	else if (type == 's')
 		ft_putstr(va_arg(args, char *), res);
+	else if (type == 'p')
+		ft_putnbr_base(va_arg(args, unsigned long int), res);
 }
 
 int	ft_printf(const char *type, ...)

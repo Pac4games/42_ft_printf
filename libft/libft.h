@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:44 by paugonca          #+#    #+#             */
-/*   Updated: 2022/11/30 15:29:24 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/11/30 15:57:12 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 void	ft_putchar(char c, int *res);
 void	ft_putstr(char *str, int *res);
-char	*ft_itoa_base(unsigned long value, int base);
+size_t	ft_strlen(const char *s);
+void	ft_putnbr_base(int n, char *base, int *res);
 
 #endif
