@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:28:46 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 13:04:35 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:07:17 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	exec_flag(va_list args, const char type, int *res)
 		putmem(va_arg(args, unsigned long int), res);
 	else if (type == 'd' || type == 'i')
 		ft_putstr(ft_itoa(va_arg(args, int)), res);
+	else if (type == 'u')
+		ft_putstr(unsig_itoa(va_arg(args, unsigned int)), res);
 }
 
 int	ft_printf(const char *type, ...)
@@ -52,15 +54,17 @@ int	ft_printf(const char *type, ...)
 
 int	main(void)
 {
-	char	c = 'c';
-	char	s[] = "O Eduardo e um banananao"; 
-	void	*p = (void *)s;
-	int		i = 69420;
+	char			c = 'c';
+	char			s[] = "This is a test string."; 
+	void			*p = (void *)s;
+	int				i = 12345;
+	unsigned int	u = 4294967295;
 
-	printf("Original printf:\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
-	printf("Void ptr: %p\nInt: %d or %i\n", p, i, i);
-	ft_printf("\nMy ft_printf:\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
-	ft_printf("Void ptr: %p\nInt: %d or %i\n", p, i, i);
+	printf("Original printf:\n\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
+	printf("Void ptr: %p\nInt: %d or %i\nUnsig int: %u\n", p, i, i, u);
+	ft_printf("---------------------------------------------");
+	ft_printf("\nMy ft_printf:\n\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
+	ft_printf("Void ptr: %p\nInt: %d or %i\nUnsig int: %u\n", p, i, i, u);
 	return (0);
 }
 */
