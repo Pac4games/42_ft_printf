@@ -6,23 +6,26 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:01:49 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 14:38:11 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:46:28 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static void	puthex(unsigned long int num, int *res)
+void	puthex(unsigned long int num, char type, int *res)
 {
 	char	*base;
 
-	base = "0123456789abcdef";
+	if (type == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
 	if (num < 16)
 		ft_putchar(base[num % 16], res);
 	else
 	{
-		puthex(num / 16, res);
-		puthex(num % 16, res);
+		puthex(num / 16, type, res);
+		puthex(num % 16, type, res);
 	}
 }
 
@@ -37,7 +40,7 @@ void	putmem(unsigned long int ptr, int *res)
 		return ;
 	}
 	ft_putstr("0x", res);
-	puthex(hold, res);
+	puthex(hold, 'x', res);
 }
 
 char	*unsig_itoa(unsigned int n)

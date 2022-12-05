@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:28:46 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 15:07:17 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:49:49 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void	exec_flag(va_list args, const char type, int *res)
 		ft_putstr(ft_itoa(va_arg(args, int)), res);
 	else if (type == 'u')
 		ft_putstr(unsig_itoa(va_arg(args, unsigned int)), res);
+	else if (type == 'x' || type == 'X')
+		puthex(va_arg(args, unsigned int), type, res);
 }
 
 int	ft_printf(const char *type, ...)
@@ -59,12 +61,16 @@ int	main(void)
 	void			*p = (void *)s;
 	int				i = 12345;
 	unsigned int	u = 4294967295;
+	unsigned int	x = 42;
+	unsigned int	X = 42;
 
 	printf("Original printf:\n\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
 	printf("Void ptr: %p\nInt: %d or %i\nUnsig int: %u\n", p, i, i, u);
+	printf("'x' conversion: %x\n'X' conversion: %X\n", x, X);
 	ft_printf("---------------------------------------------");
 	ft_printf("\nMy ft_printf:\n\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
 	ft_printf("Void ptr: %p\nInt: %d or %i\nUnsig int: %u\n", p, i, i, u);
+	ft_printf("'x' conversion: %x\n'X' conversion: %X\n", x, X);
 	return (0);
 }
 */
