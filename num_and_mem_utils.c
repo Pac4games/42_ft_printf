@@ -6,11 +6,11 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:01:49 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 16:46:28 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:59:20 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void	puthex(unsigned long int num, char type, int *res)
 {
