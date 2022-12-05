@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   num_and_mem_utils.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 15:23:06 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 12:05:55 by paugonca         ###   ########.fr       */
+/*   Created: 2022/12/05 12:01:49 by paugonca          #+#    #+#             */
+/*   Updated: 2022/12/05 12:25:27 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-//Adaptaded version to fit the way my ft_printf.c works.
-void	ft_putstr(char *str, int *res)
+static void	puthex(unsigned long int num, int *res)
 {
-	unsigned int	p;
+	char	*base;
 
-	if (!str)
-		ft_putstr("(null)", res);
+	base = "0123456789abcdef";
+	if (num < 16)
+		ft_putchar(base[num % 16], res);
 	else
 	{
-		p = 0;
-		while (str[p])
-			ft_putchar(str[p++], res);
+		puthex(num / 16, res);
+		puthex(num % 16, res);
 	}
+}
+
+void	putmem(unsigned long int ptr, int *res)
+{
+	unsigned long int	hold;
+
+	hold = ptr;
+	if (hold == 0)
+	{
+		*res += write(1, "(nil)", 5);
+		return ;
+	}
+	ft_putstr("0x", res);
+	puthex(hold, res);
 }

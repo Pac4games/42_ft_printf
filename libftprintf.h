@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:31:34 by paugonca          #+#    #+#             */
-/*   Updated: 2022/11/30 15:39:03 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/05 12:55:56 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include "libft/libft.h"
 
-int	ft_printf(const char *type, ...);
+int		ft_printf(const char *type, ...);
+void	putmem(unsigned long int ptr, int *res);
 
 #endif

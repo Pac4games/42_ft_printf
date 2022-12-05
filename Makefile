@@ -5,24 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/31 12:23:31 by paugonca          #+#    #+#              #
-#    Updated: 2022/12/05 12:58:28 by paugonca         ###   ########.fr        #
+#    Created: 2022/12/05 12:11:31 by paugonca          #+#    #+#              #
+#    Updated: 2022/12/05 12:23:10 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
-SRC = ft_strlen ft_putchar ft_putstr ft_itoa
+NAME = libftprintf.a
+SRC = ft_printf num_and_mem_utils
 
 CC = gcc
 RM = rm -f
-CCFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
-
-$(NAME): $(SRC:=.o)
+$(NAME) : $(SRC:=.o)
 	ar rc $(NAME) $(SRC:=.o)
+
 clean:
-	$(RM) $(SRC:=.o)
+	$(RM) $(SRC=.o)
 fclean: clean
 	$(RM) $(NAME)
 re: fclean $(NAME)
