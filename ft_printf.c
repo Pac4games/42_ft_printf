@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:28:46 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 16:58:54 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:21:23 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ static void	exec_flag(va_list args, const char type, int *res)
 	else if (type == 'p')
 		putmem(va_arg(args, unsigned long int), res);
 	else if (type == 'd' || type == 'i')
-		ft_putstr(ft_itoa(va_arg(args, int)), res);
+		putint_n_free(va_arg(args, int), res);
 	else if (type == 'u')
-		ft_putstr(unsig_itoa(va_arg(args, unsigned int)), res);
+		putunsigint_n_free(va_arg(args, unsigned int), res);
 	else if (type == 'x' || type == 'X')
 		puthex(va_arg(args, unsigned int), type, res);
 }

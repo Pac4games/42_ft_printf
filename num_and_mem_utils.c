@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:01:49 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/05 16:59:20 by paugonca         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:23:51 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,22 @@ char	*unsig_itoa(unsigned int n)
 	if (len == 0 && res[1] == '\0')
 		*(res + len) = 48;
 	return (res);
+}
+
+void	putint_n_free(int n, int *res)
+{
+	char	*num;
+
+	num = ft_itoa(n);
+	ft_putstr(num, res);
+	free(num);
+}
+
+void	putunsigint_n_free(unsigned int n, int *res)
+{
+	char	*num;
+
+	num = unsig_itoa(n);
+	ft_putstr(num, res);
+	free(num);
 }
