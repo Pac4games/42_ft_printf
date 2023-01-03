@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 12:01:49 by paugonca          #+#    #+#             */
-/*   Updated: 2022/12/26 16:23:51 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/01/03 14:57:47 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char	*unsig_itoa(unsigned int n)
 	num = (long)n;
 	len = 0;
 	if (n == 0)
-		return ("0");
+		return (ft_itoa(n));
 	while (n)
 	{
 		n /= 10;
