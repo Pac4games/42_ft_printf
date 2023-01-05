@@ -6,7 +6,7 @@
 /*   By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:28:46 by paugonca          #+#    #+#             */
-/*   Updated: 2023/01/04 16:36:56 by paugonca         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:39:34 by paugonca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,6 @@ static void	exec_flag(va_list args, const char type, int *res)
 		puthex(va_arg(args, unsigned int), type, res);
 }
 
-static void	exec_bonus_flag(const char bonus, const char type, int *res)
-{
-	if (bonus == '#' && type == 'x')
-		ft_putstr("0x", res);
-	else if (bonus == '#' && type == 'X')
-		ft_putstr("0X", res);
-}
-
 int	ft_printf(const char *type, ...)
 {
 	int		res;
@@ -50,12 +42,6 @@ int	ft_printf(const char *type, ...)
 		if (*type == '%')
 		{
 			type++;
-			if (*type == '#')
-			{
-				ft_printf("[Cardinal detected]");
-				exec_bonus_flag(*type, *type + 1, &res);
-				type++;
-			}
 			exec_flag(args, *type, &res);
 		}
 		else
@@ -65,7 +51,7 @@ int	ft_printf(const char *type, ...)
 	va_end(args);
 	return (res);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -81,11 +67,10 @@ int	main(void)
 	printf("Original printf:\n\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
 	printf("Void ptr: %p\nInt: %d or %i\nUnsig int: %u\n", p, i, i, u);
 	printf("'x' conversion: %x\n'X' conversion: %X\n", x, X);
-	printf("'#x' conversion: %#x\n'#X' conversion: %#X\n", x, X);
 	ft_printf("---------------------------------------------");
 	ft_printf("\nMy ft_printf:\n\nPercentage: %%\nChar: %c\nStr: %s\n", c, s);
 	ft_printf("Void ptr: %p\nInt: %d or %i\nUnsig int: %u\n", p, i, i, u);
 	ft_printf("'x' conversion: %x\n'X' conversion: %X\n", x, X);
-	ft_printf("'#x' conversion: %#x\n'#X' conversion: %#X\n", x, X);
 	return (0);
 }
+*/
