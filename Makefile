@@ -6,7 +6,7 @@
 #    By: paugonca <paugonca@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/05 12:11:31 by paugonca          #+#    #+#              #
-#    Updated: 2022/12/05 17:27:42 by paugonca         ###   ########.fr        #
+#    Updated: 2023/01/10 15:15:22 by paugonca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 SRC = ft_printf num_and_mem_utils \
 libft/ft_itoa libft/ft_putchar libft/ft_putstr libft/ft_strlen	
 
-CC = gcc
+CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
